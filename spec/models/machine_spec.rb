@@ -7,4 +7,22 @@ RSpec.describe Machine, type: :model do
     it { should have_many :machine_snacks }
     it { should have_many(:snacks).through(:machine_snacks)}
   end
+
+  describe "instance methods" do
+    describe 'avg_snack_price' do
+      it "returns the average snack price of all snacks in machine" do
+        machine = create(:machine)
+
+        snack_1 = create(:snack, price: 1.50)
+        snack_2 = create(:snack, price: 2.50)
+        snack_3 = create(:snack, price: 4.00)
+
+        machine_snack_1 = create(:machine_snack, machine: machine, snack: snack_1)
+        machine_snack_1 = create(:machine_snack, machine: machine, snack: snack_2)
+        machine_snack_1 = create(:machine_snack, machine: machine, snack: snack_3)
+
+        expect(machine.avg_snack_price).to eq(2.67)
+      end
+    end
+  end
 end
