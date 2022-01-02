@@ -7,7 +7,7 @@ end
 
 ruby '2.7.2'
 
-gem 'pg', '~> 0.18'
+gem 'pg'#, '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -24,6 +24,8 @@ group :development, :test do
   gem 'pry'
   gem 'launchy'
   gem 'simplecov', require: false, group: :test
+  gem 'factory_bot_rails'
+  gem 'bootsnap'
 end
 
 group :development do
