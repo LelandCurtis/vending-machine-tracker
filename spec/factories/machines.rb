@@ -11,6 +11,8 @@ FactoryBot.define do
         evaluator.snack_count.times do
           snack = create(:snack)
           machine_snack = create(:machine_snack, machine: machine, snack: snack)
+          machine.reload
+          snack.reload
         end
       end
     end
