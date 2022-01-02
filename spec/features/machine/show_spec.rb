@@ -6,9 +6,9 @@ RSpec.describe 'machine show page' do
 
     visit "/machines/#{machine.id}"
 
-    expect(page).to have_content("Default Name 1")
-    expect(page).to have_content("Default Name 2")
-    expect(page).to have_content("Default Name 3")
+    expect(page).to have_content("Default Snack Name 1")
+    expect(page).to have_content("Default Snack Name 2")
+    expect(page).to have_content("Default Snack Name 3")
   end
 
   it "shows all of the prices associated with each snack rounded to 2 digits" do
