@@ -20,4 +20,12 @@ RSpec.describe 'machine show page' do
       expect(page).to have_content("$#{snack.price}")
     end
   end
+
+  it "shows the average price of all the snacks in that machine" do
+    machine = create(:machine_with_snacks, snack_count: 3)
+
+    visit "/machines/#{machine.id}"
+
+    expect(page).to have_content("Average Snack Price: #{machine.avg_snack_price}")
+  end
 end
