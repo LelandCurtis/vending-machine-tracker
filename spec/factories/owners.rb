@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :owner do
-    sequence(:name) {|n| "Default Name #{n}"}
+    sequence(:name) {|n| "Default Owner Name #{n}"}
 
     factory :owner_with_machines do
 
