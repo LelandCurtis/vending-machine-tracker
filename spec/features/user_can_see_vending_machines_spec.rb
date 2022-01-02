@@ -16,8 +16,9 @@ RSpec.describe "When a user visits the vending machine index", type: :feature do
     sam = create(:owner_with_machines, machine_count: 10)
 
     visit owner_machines_path(sam)
-    
+
     expect(page).to have_content("Default Location 1")
     expect(page).to have_content("Default Location 10")
+    #
   end
 end
