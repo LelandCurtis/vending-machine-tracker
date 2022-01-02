@@ -2,8 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "When a user visits the owners index", type: :feature do
   scenario "they see a list of owners" do
-    Owner.create(name: "Sam's Snacks")
-    Owner.create(name: "Drew's Drinks")
+    # original tests
+    # Owner.create(name: "Sam's Snacks")
+    # Owner.create(name: "Drew's Drinks")
+
+    # factorybot
+    create(:owner, name: "Sam's Snacks")
+    create(:owner, name: "Drew's Drinks")
 
     visit owners_path
 
