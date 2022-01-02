@@ -10,10 +10,6 @@ RSpec.describe Machine, type: :model do
 
   describe "instance methods" do
     describe 'avg_snack_price' do
-      before :each do
-
-      end
-
       it "returns the average snack price of all snacks in machine" do
         machine = create(:machine)
 
@@ -32,6 +28,17 @@ RSpec.describe Machine, type: :model do
         machine = create(:machine)
 
         expect(machine.avg_snack_price).to eq(nil)
+      end
+    end
+
+    describe has_snacks? do
+      it "returns false if machine has no snacks" do
+        machine = create(:machine)
+        expect(machine.has_snacks?).to eq(fasle)
+      end
+      it "returns true if machine has snacks" do
+        machine = create(:machine_with_snacks(2))
+        expect(machine.has_snacks?).to eq(true)
       end
     end
   end
