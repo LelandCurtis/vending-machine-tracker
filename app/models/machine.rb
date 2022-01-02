@@ -6,6 +6,10 @@ class Machine < ApplicationRecord
   has_many :snacks, through: :machine_snacks
 
   def avg_snack_price
-    snacks.average(:price).round(2)
+    if snacks.count > 0
+      return snacks.average(:price).round(2)
+    else
+      return nil
+    end
   end
 end
