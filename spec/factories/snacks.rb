@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :snack do
-    name { "MyString" }
-    price { 1.5 }
+    sequence(:name) { |n| "Default Snack Name #{n}" }
+    sequence(:price) { |n| "#{n}.11".to_f }
   end
 end
