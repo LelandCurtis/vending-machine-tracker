@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :machine do
-    location {"Denver"}
+    sequence(:location) {|l| "Default Location #{l}"}
     association :owner, factory: :owner
   end
 end
