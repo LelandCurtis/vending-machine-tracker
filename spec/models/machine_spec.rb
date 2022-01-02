@@ -31,13 +31,13 @@ RSpec.describe Machine, type: :model do
       end
     end
 
-    describe has_snacks? do
+    describe "has_snacks?" do
       it "returns false if machine has no snacks" do
         machine = create(:machine)
-        expect(machine.has_snacks?).to eq(fasle)
+        expect(machine.has_snacks?).to eq(false)
       end
       it "returns true if machine has snacks" do
-        machine = create(:machine_with_snacks(2))
+        machine = create(:machine_with_snacks, snack_count: 2)
         expect(machine.has_snacks?).to eq(true)
       end
     end
