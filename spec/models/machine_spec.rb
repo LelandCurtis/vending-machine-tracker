@@ -20,7 +20,7 @@ RSpec.describe Machine, type: :model do
         machine_snack_1 = create(:machine_snack, machine: machine, snack: snack_1)
         machine_snack_1 = create(:machine_snack, machine: machine, snack: snack_2)
         machine_snack_1 = create(:machine_snack, machine: machine, snack: snack_3)
-
+        
         expect(machine.avg_snack_price).to eq(2.67)
       end
 
