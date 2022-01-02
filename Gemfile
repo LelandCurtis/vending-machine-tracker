@@ -25,6 +25,7 @@ group :development, :test do
   gem 'launchy'
   gem 'simplecov', require: false, group: :test
   gem 'factory_bot_rails'
+  gem 'bootsnap'
 end
 
 group :development do
